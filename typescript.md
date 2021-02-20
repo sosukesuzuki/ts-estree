@@ -33,7 +33,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSInterfaceBody
 - [ ] TSInterfaceDeclaration
 - [ ] TSInterfaceHeritage
-- [ ] TSIntersectionType
+- [x] TSIntersectionType
 - [x] TSLiteralType
 - [ ] TSMappedType
 - [ ] TSMethodSignature
@@ -484,6 +484,25 @@ interface TSUnionType :< TypeExpression {
 
 ```ts
 let foo: Foo | Bar;
+```
+
+</div>
+</details>
+
+### TSIntersectionType
+
+```ts
+interface TSIntersectionType :< TypeExpression {
+  type: "TSIntersectionType";
+  types: [ TypeExpression ];
+}
+```
+
+<details>
+<div>
+
+```ts
+let foo: Foo & Bar;
 ```
 
 </div>
