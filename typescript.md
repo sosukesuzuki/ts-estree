@@ -69,7 +69,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSTypeOperator
 - [ ] TSTypeParameter
 - [ ] TSTypeParameterDeclaration
-- [ ] TSTypeParameterInstantiation
+- [x] TSTypeParameterInstantiation
 - [ ] TSTypePredicate
 - [ ] TSTypeQuery
 - [ ] TSTypeReference
@@ -407,6 +407,27 @@ interface TSConditionalType :< TypeExpression {
 
 ```ts
 var foo: checkType extends extendsType ? trueType : falseType;
+```
+
+</div>
+</details>
+
+## Type Parameters
+
+### TSTypeParameterInstantiation
+
+```ts
+interface TSTypeParameterInstantiation :< Node {
+  type: "TSTypeParameterInstantiation";
+  params: [ TypeExpression ];
+}
+```
+
+<details>
+<div>
+
+```ts
+foo<T>();
 ```
 
 </div>
