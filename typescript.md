@@ -75,7 +75,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTypeReference
 - [x] TSUndefinedKeyword
 - [x] TSUnionType
-- [ ] TSUnknownKeyword
+- [x] TSUnknownKeyword
 - [x] TSVoidKeyword
 
 ## Expressions
@@ -346,6 +346,24 @@ interface TSVoidKeyword :< TypeExpression {
 
 ```ts
 var foo: void;
+```
+
+</div>
+</details>
+
+### TSUnknownKeyword
+
+```ts
+interface TSUnknownKeyword :< TypeExpression {
+  type: "TSUnknownKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: unknown;
 ```
 
 </div>
