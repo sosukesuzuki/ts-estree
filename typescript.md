@@ -63,7 +63,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSThisType
 - [ ] TSTupleType
 - [ ] TSTypeAliasDeclaration
-- [ ] TSTypeAnnotation
+- [x] TSTypeAnnotation
 - [ ] TSTypeAssertion
 - [ ] TSTypeLiteral
 - [ ] TSTypeOperator
@@ -117,6 +117,28 @@ foo!;
 ```
 
 </div>
+</details>
+
+## Type Annotations
+
+### TSTypeAnnotation
+
+```ts
+interface TSTypeAnnotation :< Node {
+  type: "TSTypeAnnotation";
+  typeAnnotation: TypeExpression;
+}
+```
+
+<details>
+<div>
+
+```ts
+// TODO: Add example
+```
+
+</div>
+
 </details>
 
 ## Type Expressions
