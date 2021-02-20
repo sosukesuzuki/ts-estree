@@ -74,7 +74,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSTypeQuery
 - [x] TSTypeReference
 - [x] TSUndefinedKeyword
-- [ ] TSUnionType
+- [x] TSUnionType
 - [ ] TSUnknownKeyword
 - [x] TSVoidKeyword
 
@@ -447,6 +447,25 @@ interface TSQualifiedName :< TypeExpression {
 
 ```ts
 let foo: Foo.Bar;
+```
+
+</div>
+</details>
+
+### TSUnionType
+
+```ts
+interface TSUnionType :< TypeExpression {
+  type: "TSUnionType";
+  types: [ TypeExpression ];
+}
+```
+
+<details>
+<div>
+
+```ts
+let foo: Foo | Bar;
 ```
 
 </div>
