@@ -53,7 +53,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSPropertySignature
 - [ ] TSProtectedKeyword
 - [ ] TSPublicKeyword
-- [ ] TSQualifiedName
+- [x] TSQualifiedName
 - [ ] TSReadonlyKeyword
 - [ ] TSRestType
 - [ ] TSStaticKeyword
@@ -427,6 +427,26 @@ interface TSTypeReference :< TypeExpression {
 
 ```ts
 let foo: Foo;
+```
+
+</div>
+</details>
+
+### TSQualifiedName
+
+```ts
+interface TSQualifiedName :< TypeExpression {
+  type: "TSQualifiedName";
+  left: Identifier | TSQualifiedName;
+  right: Identifier;
+}
+```
+
+<details>
+<div>
+
+```ts
+let foo: Foo.Bar;
 ```
 
 </div>
