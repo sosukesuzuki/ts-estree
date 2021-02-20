@@ -66,7 +66,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTypeAnnotation
 - [ ] TSTypeAssertion
 - [ ] TSTypeLiteral
-- [ ] TSTypeOperator
+- [x] TSTypeOperator
 - [x] TSTypeParameter
 - [x] TSTypeParameterDeclaration
 - [x] TSTypeParameterInstantiation
@@ -563,6 +563,24 @@ var foo: infer bar;
 
 </div>
 </details>
+
+### TSTypeOperator
+
+```ts
+interface TSTypeOperator :< TypeExpression {
+  type: "TSTypeOperator";
+  operator: TypeOperator;
+  typeAnnotation?: TypeExpression;
+}
+```
+
+#### TypeOperator
+
+```ts
+enum TypeOperator {
+  'keyof' | 'unique' | 'readonly'
+}
+```
 
 ## Type Parameters
 
