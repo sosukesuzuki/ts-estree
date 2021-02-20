@@ -72,7 +72,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTypeParameterInstantiation
 - [ ] TSTypePredicate
 - [ ] TSTypeQuery
-- [ ] TSTypeReference
+- [x] TSTypeReference
 - [x] TSUndefinedKeyword
 - [ ] TSUnionType
 - [ ] TSUnknownKeyword
@@ -407,6 +407,26 @@ interface TSConditionalType :< TypeExpression {
 
 ```ts
 var foo: checkType extends extendsType ? trueType : falseType;
+```
+
+</div>
+</details>
+
+### TSTypeReference
+
+```ts
+interface TSTypeReference :< TypeExpression {
+  type: "TSTypeReference";
+  typeName: Identifier | TSQualifiedName;
+  typeParameters: TSTypeParameterInstantiation;
+}
+```
+
+<details>
+<div>
+
+```ts
+let foo: Foo;
 ```
 
 </div>
