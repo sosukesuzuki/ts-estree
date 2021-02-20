@@ -60,7 +60,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSStringKeyword
 - [x] TSSymbolKeyword
 - [ ] TSTemplateLiteralType
-- [ ] TSThisType
+- [x] TSThisType
 - [x] TSTupleType
 - [ ] TSTypeAliasDeclaration
 - [x] TSTypeAnnotation
@@ -364,6 +364,24 @@ interface TSUnknownKeyword :< TypeExpression {
 
 ```ts
 var foo: unknown;
+```
+
+</div>
+</details>
+
+### TSThisType
+
+```ts
+interface TSThisType :< TypeExpression {
+  type: "TSThisType";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: this;
 ```
 
 </div>
