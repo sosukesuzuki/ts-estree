@@ -596,6 +596,8 @@ interface TSTypeParameter :< Node {
 }
 ```
 
+`name` is `string` in Babel. See https://github.com/babel/babel/issues/12825.
+
 <details>
 <div>
 
