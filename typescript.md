@@ -1,0 +1,347 @@
+This documentat specifies the extensions to the core ESTree AST types to the TypeScript grammer.
+
+## TODO
+
+- [ ] TSAbstractClassProperty
+- [ ] TSAbstractKeyword
+- [ ] TSAbstractMethodDefinition
+- [x] TSAnyKeyword
+- [ ] TSArrayType
+- [x] TSAsExpression
+- [ ] TSAsyncKeyword
+- [x] TSBigIntKeyword
+- [x] TSBooleanKeyword
+- [ ] TSCallSignatureDeclaration
+- [ ] TSClassImplements
+- [ ] TSConditionalType
+- [ ] TSConstructorType,
+- [ ] TSConstructSignatureDeclaration,
+- [ ] TSDeclareFunction,
+- [ ] TSDeclareKeyword,
+- [ ] TSEmptyBodyFunctionExpression
+- [ ] TSEnumDeclaration
+- [ ] TSEnumMember
+- [ ] TSExportAssignment
+- [ ] TSExportKeyword
+- [ ] TSExternalModuleReference
+- [ ] TSFunctionType
+- [ ] TSImportEqualsDeclaration
+- [ ] TSImportType
+- [ ] TSIndexedAccessType
+- [ ] TSIndexSignature
+- [ ] TSInferType
+- [ ] TSInterfaceBody
+- [ ] TSInterfaceDeclaration
+- [ ] TSInterfaceHeritage
+- [ ] TSIntersectionType
+- [x] TSLiteralType
+- [ ] TSMappedType
+- [ ] TSMethodSignature
+- [ ] TSModuleBlock
+- [ ] TSModuleDeclaration
+- [ ] TSNamedTupleMember
+- [ ] TSNamespaceExportDeclaration
+- [x] TSNeverKeyword
+- [x] TSNonNullExpression
+- [x] TSNullKeyword
+- [x] TSNumberKeyword
+- [x] TSObjectKeyword
+- [ ] TSOptionalType
+- [ ] TSParameterProperty
+- [ ] TSParenthesizedType
+- [ ] TSPrivateKeyword
+- [ ] TSPropertySignature
+- [ ] TSProtectedKeyword
+- [ ] TSPublicKeyword
+- [ ] TSQualifiedName
+- [ ] TSReadonlyKeyword
+- [ ] TSRestType
+- [ ] TSStaticKeyword
+- [x] TSStringKeyword
+- [x] TSSymbolKeyword
+- [ ] TSTemplateLiteralType
+- [ ] TSThisType
+- [ ] TSTupleType
+- [ ] TSTypeAliasDeclaration
+- [ ] TSTypeAnnotation
+- [ ] TSTypeAssertion
+- [ ] TSTypeLiteral
+- [ ] TSTypeOperator
+- [ ] TSTypeParameter
+- [ ] TSTypeParameterDeclaration
+- [ ] TSTypeParameterInstantiation
+- [ ] TSTypePredicate
+- [ ] TSTypeQuery
+- [ ] TSTypeReference
+- [x] TSUndefinedKeyword
+- [ ] TSUnionType
+- [ ] TSUnknownKeyword
+- [x] TSVoidKeyword
+
+## Expressions
+
+### TSAsExpression
+
+```ts
+interface TSAsExpression :< Expression {
+  type: "TSAsExpression";
+  expression: Expression;
+  typeAnnotation: TypeExpression;
+}
+```
+
+<details>
+<div>
+
+```ts
+foo as Foo;
+```
+
+</div>
+</details>
+
+### TSNonNullExpression
+
+```ts
+interface TSNonNullExpression :< Expression {
+  type: "TSNonNullExpression";
+  expression: Expression;
+}
+```
+
+<details>
+<div>
+
+```ts
+foo!;
+```
+
+</div>
+</details>
+
+## Type Expressions
+
+```ts
+interface TypeExpression :< Node {}
+```
+
+Any expressions in type context.
+
+### TSUndefinedKeyword
+
+```ts
+interface TSUndefinedKeyword :< TypeExpression {
+  type: "TSUndefinedKeyword"
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: undefined;
+```
+</div>
+
+</details>
+
+
+### TSBooleanKeyword
+
+```ts
+interface TSBooleanKeyword :< TypeExpression {
+  type: "TSBooleanKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: boolean;
+```
+</div>
+
+</details>
+
+### TSNumberKeyword
+
+```ts
+interface TSNumberKeyword :< TypeExpression {
+  type: "TSNumberKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: number;
+```
+</div>
+
+</details>
+
+### TSStringKeyword
+
+```ts
+interface TSStringKeyword :< TypeExpression {
+  type: "TSStringKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: string;
+```
+</div>
+
+</details>
+
+### TSBigIntKeyword
+
+```ts
+interface TSBigIntKeyword :< TypeExpression {
+  type: "TSBigIntKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: bigint;
+```
+
+</div>
+</details>
+
+### TSSymbolKeyword
+
+```ts
+interface TSSymbolKeyword :< TypeExpression {
+  type: "TSSymbolKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: symbol;
+```
+
+</div>
+</details>
+
+### TSAnyKeyword
+
+```ts
+interface TSAnyKeyword :< TypeExpression {
+  type: "TSAnyKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: any;
+```
+
+</div>
+</details>
+
+### TSNeverKeyword
+
+```ts
+interface TSNeverKeyword :< TypeExpression {
+  type: "TSNeverKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: never;
+```
+
+</div>
+</details>
+
+### TSNullKeyword
+
+```ts
+interface TSNullKeyword :< TypeExpression {
+  type: "TSNullKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: null;
+```
+
+</div>
+</details>
+
+### TSObjectKeyword
+
+```ts
+interface TSObjectKeyword :< TypeExpression {
+  type: "TSObjectKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: object;
+```
+
+</div>
+</details>
+
+### TSVoidKeyword
+
+```ts
+interface TSVoidKeyword :< TypeExpression {
+  type: "TSVoidKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: void;
+```
+
+</div>
+</details>
+
+### TSLiteralType
+
+```ts
+interface TSLiteralType :< TypeExpression {
+  type: "TSLiteralType";
+  literal: Literal;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: "str";
+var bar: 123;
+```
+
+</div>
+</details>
