@@ -29,7 +29,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSImportType
 - [ ] TSIndexedAccessType
 - [ ] TSIndexSignature
-- [ ] TSInferType
+- [x] TSInferType
 - [ ] TSInterfaceBody
 - [ ] TSInterfaceDeclaration
 - [ ] TSInterfaceHeritage
@@ -540,6 +540,25 @@ interface TSIntersectionType :< TypeExpression {
 
 ```ts
 let foo: Foo & Bar;
+```
+
+</div>
+</details>
+
+### TSInferType
+
+```ts
+interface TSInferType :< TypeExpression {
+  type: "TSInferType";
+  typeParameter: TSTypeParameter;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: infer bar;
 ```
 
 </div>
