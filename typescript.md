@@ -61,7 +61,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSSymbolKeyword
 - [ ] TSTemplateLiteralType
 - [ ] TSThisType
-- [ ] TSTupleType
+- [x] TSTupleType
 - [ ] TSTypeAliasDeclaration
 - [x] TSTypeAnnotation
 - [ ] TSTypeAssertion
@@ -403,6 +403,25 @@ interface TSArrayType :< TypeExpression {
 
 ```ts
 var foo: Type[];
+```
+
+</div>
+</details>
+
+### TSTupleType
+
+```ts
+interface TSTupleType :< TypeExpression {
+  type: "TSTupleType";
+  elementTypes: [ TypeExpression ];
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: [element1, element2];
 ```
 
 </div>
