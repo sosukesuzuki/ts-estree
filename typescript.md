@@ -13,7 +13,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSBooleanKeyword
 - [ ] TSCallSignatureDeclaration
 - [ ] TSClassImplements
-- [ ] TSConditionalType
+- [x] TSConditionalType
 - [ ] TSConstructorType,
 - [ ] TSConstructSignatureDeclaration,
 - [ ] TSDeclareFunction,
@@ -141,10 +141,10 @@ interface TSUndefinedKeyword :< TypeExpression {
 ```ts
 var foo: undefined;
 ```
+
 </div>
 
 </details>
-
 
 ### TSBooleanKeyword
 
@@ -160,6 +160,7 @@ interface TSBooleanKeyword :< TypeExpression {
 ```ts
 var foo: boolean;
 ```
+
 </div>
 
 </details>
@@ -178,6 +179,7 @@ interface TSNumberKeyword :< TypeExpression {
 ```ts
 var foo: number;
 ```
+
 </div>
 
 </details>
@@ -196,6 +198,7 @@ interface TSStringKeyword :< TypeExpression {
 ```ts
 var foo: string;
 ```
+
 </div>
 
 </details>
@@ -360,6 +363,28 @@ interface TSArrayType :< TypeExpression {
 
 ```ts
 var foo: Type[];
+```
+
+</div>
+</details>
+
+### TSConditionalType
+
+```ts
+interface TSConditionalType :< TypeExpression {
+  type "TSConditionalType";
+  checkType: TypeExpression;
+  extendsType: TypeExpression;
+  trueType: TypeExpression;
+  falseType: TypeExpression;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: checkType extends extendsType ? trueType : falseType;
 ```
 
 </div>
