@@ -6,7 +6,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSAbstractKeyword
 - [ ] TSAbstractMethodDefinition
 - [x] TSAnyKeyword
-- [ ] TSArrayType
+- [x] TSArrayType
 - [x] TSAsExpression
 - [ ] TSAsyncKeyword
 - [x] TSBigIntKeyword
@@ -341,6 +341,25 @@ interface TSLiteralType :< TypeExpression {
 ```ts
 var foo: "str";
 var bar: 123;
+```
+
+</div>
+</details>
+
+### TSArrayType
+
+```ts
+interface TSArrayType :< TypeExpression {
+  type: "TSArrayType";
+  elementType: TypeExpression;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: Type[];
 ```
 
 </div>
