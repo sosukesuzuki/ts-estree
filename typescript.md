@@ -67,8 +67,8 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSTypeAssertion
 - [ ] TSTypeLiteral
 - [ ] TSTypeOperator
-- [ ] TSTypeParameter
-- [ ] TSTypeParameterDeclaration
+- [x] TSTypeParameter
+- [x] TSTypeParameterDeclaration
 - [x] TSTypeParameterInstantiation
 - [ ] TSTypePredicate
 - [ ] TSTypeQuery
@@ -468,6 +468,54 @@ interface TSTypeParameterInstantiation :< Node {
 
 ```ts
 foo<T>();
+```
+
+</div>
+</details>
+
+### TSTypeParameterDeclaration
+
+```ts
+interface TSTypeParameterDeclaration :< Node {
+  type: "TSTypeParameterDeclaration";
+  params: [ TSTypeParameter ];
+}
+```
+
+<details>
+<div>
+
+```ts
+function foo<T>() {}
+```
+
+</div>
+</details>
+
+### TSTypeParameter
+
+```ts
+interface TSTypeParameter :< Node {
+  type: "TSTypeParameter";
+  name: Identifier;
+  constraint?: TypeExpression;
+  default?: TypeExpressions;
+}
+```
+
+<details>
+<div>
+
+```ts
+function foo<T>() {}
+```
+
+```ts
+function foo<T = any>() {}
+```
+
+```ts
+function foo<T extends string>() {}
 ```
 
 </div>
