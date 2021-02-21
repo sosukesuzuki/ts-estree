@@ -71,7 +71,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTypeParameterDeclaration
 - [x] TSTypeParameterInstantiation
 - [ ] TSTypePredicate
-- [ ] TSTypeQuery
+- [x] TSTypeQuery
 - [x] TSTypeReference
 - [x] TSUndefinedKeyword
 - [x] TSUnionType
@@ -581,6 +581,25 @@ enum TypeOperator {
   'keyof' | 'unique' | 'readonly'
 }
 ```
+
+### TSTypeQuery
+
+```ts
+interface TSTypeQuery {
+  type: "TSTypeQuery";
+  exprName: Identifier | TSQualifiedName;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: typeof bar;
+```
+
+</div>
+</details>
 
 ## Type Parameters
 
