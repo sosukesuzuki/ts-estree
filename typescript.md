@@ -657,7 +657,7 @@ interface TSRestType {
 }
 ```
 
-A reset type is only allowed in elementTypes of [TSTupleType](###TSTupleType).
+A reset type is only allowed in elementTypes of [TSTupleType](#TSTupleType).
 
 <details>
 <div>
