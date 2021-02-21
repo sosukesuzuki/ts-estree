@@ -70,7 +70,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTypeParameter
 - [x] TSTypeParameterDeclaration
 - [x] TSTypeParameterInstantiation
-- [ ] TSTypePredicate
+- [x] TSTypePredicate
 - [x] TSTypeQuery
 - [x] TSTypeReference
 - [x] TSUndefinedKeyword
@@ -606,6 +606,31 @@ interface TSTypeQuery {
 
 ```ts
 var foo: typeof bar;
+```
+
+</div>
+</details>
+
+### TSTypePredicate
+
+```ts
+interface TSTypePredicate :< TypeExpression {
+  type: "TSTypePredicate";
+  asserts: boolean;
+  parameterName: Identifier | TSThisType;
+  typeAnnotation: TSTypeAnnotation | null;
+}
+```
+
+A type predicate is only allowed in return type position for functions and methods.
+
+<details>
+<div>
+
+```ts
+function foo(bar: unknown): bar is string {
+  return typeof bar === "string";
+}
 ```
 
 </div>
