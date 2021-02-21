@@ -55,7 +55,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSPublicKeyword
 - [x] TSQualifiedName
 - [ ] TSReadonlyKeyword
-- [ ] TSRestType
+- [x] TSRestType
 - [ ] TSStaticKeyword
 - [x] TSStringKeyword
 - [x] TSSymbolKeyword
@@ -643,6 +643,27 @@ function foo(bar: unknown): asserts bar is string {
     throw new Error("");
   }
 }
+```
+
+</div>
+</details>
+
+### TSRestType
+
+```ts
+interface TSRestType {
+  type: "TSRestType";
+  typeAnnotation: TypeExpression;
+}
+```
+
+A reset type is only allowed in elementTypes of [TSTupleType](###TSTupleType).
+
+<details>
+<div>
+
+```ts
+var foo: [...Bar];
 ```
 
 </div>
