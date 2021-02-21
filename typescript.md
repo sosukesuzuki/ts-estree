@@ -627,9 +627,21 @@ A type predicate is only allowed in return type position for functions and metho
 <details>
 <div>
 
+`asserts` is `false`:
+
 ```ts
 function foo(bar: unknown): bar is string {
   return typeof bar === "string";
+}
+```
+
+`asserts` is `true`:
+
+```ts
+function foo(bar: unknown): asserts bar is string {
+  if (typeof bar !== "string") {
+    throw new Error("");
+  }
 }
 ```
 
