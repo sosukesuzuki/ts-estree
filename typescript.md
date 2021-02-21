@@ -595,7 +595,7 @@ enum TypeOperator {
 ### TSTypeQuery
 
 ```ts
-interface TSTypeQuery {
+interface TSTypeQuery :< TypeExpression {
   type: "TSTypeQuery";
   exprName: Identifier | TSQualifiedName;
 }
