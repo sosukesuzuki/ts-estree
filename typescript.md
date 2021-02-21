@@ -574,6 +574,16 @@ interface TSTypeOperator :< TypeExpression {
 }
 ```
 
+<details>
+<div>
+
+```ts
+var foo: keyof bar;
+```
+
+</div>
+</details>
+
 #### TypeOperator
 
 ```ts
