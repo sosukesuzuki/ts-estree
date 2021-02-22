@@ -65,7 +65,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSBigIntKeyword
 - [x] TSBooleanKeyword
 - [ ] TSCallSignatureDeclaration
-- [ ] TSClassImplements
+- [x] TSClassImplements
 - [x] TSConditionalType
 - [ ] TSConstructorType,
 - [ ] TSConstructSignatureDeclaration,
@@ -83,9 +83,9 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSIndexedAccessType
 - [ ] TSIndexSignature
 - [x] TSInferType
-- [ ] TSInterfaceBody
-- [ ] TSInterfaceDeclaration
-- [ ] TSInterfaceHeritage
+- [x] TSInterfaceBody
+- [x] TSInterfaceDeclaration
+- [x] TSInterfaceHeritage
 - [x] TSIntersectionType
 - [x] TSLiteralType
 - [x] TSMappedType
@@ -911,6 +911,133 @@ var foo: [bar?: string];
 </div>
 </details>
 
+## Declarations
+
+```ts
+interface TSDeclaration :< Statement {}
+```
+
+Any declarations in type context.
+
+### TSInterfaceDeclaration
+
+```ts
+interface TSInterfaceDeclaration :< TSDeclaration {
+  type: "TSInterfaceDeclaration";
+  body: TSInterfaceBody;
+  id: Identifier;
+  typeParameters?: TSTypeParameterDeclaration;
+  extends?: TSInterfaceHeritage[];
+  implements?: TSInterfaceHeritage[];
+  abstract?: boolean;
+  declare?: boolean;
+}
+```
+
+TypeScript does not support `implements` for `interface`. typescript-eslint can parse it, Babel cannot parse it.
+
+<details>
+<div>
+
+```ts
+interface Foo {}
+```
+
+```ts
+interface Foo extends Bar {}
+```
+
+<!-- prettier-ignore -->
+```ts
+interface Foo implements Bar{}
+```
+
+```ts
+interface Foo<T> {}
+```
+
+```ts
+abstract interface Foo {}
+```
+
+```ts
+declare interface Foo {}
+```
+
+</div>
+</details>
+
+### TSInterfaceBody
+
+```ts
+interface TSInterfaceBody :< Node {
+  type: "TSInterfaceBody";
+  body: [ TypeElement ];
+}
+```
+
+<details>
+<div>
+
+```ts
+interface Foo {}
+```
+
+</div>
+</details>
+
+### TSHeritage
+
+```ts
+interface TSHeritage :< Node {
+  expression: Expression;
+  typeParameters?: TSTypeParameterInstantiation;
+}
+```
+
+A base node for heritages.
+
+### TSInterfaceHeritage
+
+```ts
+interface TSInterfaceHeritage :< TSHeritage {
+  type: "TSInterfaceHeritage";
+}
+```
+
+<details>
+<div>
+
+```ts
+interface Foo extends Bar {}
+```
+
+<!-- prettier-ignore -->
+```ts
+interface Foo implements Bar {}
+```
+
+</div>
+</details>
+
+### TSClassImplements
+
+```ts
+interface TSClassImplements :< TSHeritage {
+  type: "TSClassImplements";
+}
+```
+
+<details>
+<div>
+
+```ts
+class Foo implements Bar {}
+```
+
+</div>
+</details>
+
 ## Type Parameters
 
 ### TSTypeParameterInstantiation
@@ -981,3 +1108,31 @@ function foo<T extends string>() {}
 
 </div>
 </details>
+
+## Type Elements
+
+```ts
+interface TypeElement :< Node {}
+```
+
+A element of [TSTypeLiteral](#TSTypeLiteral) and [TSInterfaceBody](#TSInterfaceBody).
+
+### TSCallSignatureDeclaration
+
+<!-- TODO -->
+
+### TSConstructSignatureDeclaration
+
+<!-- TODO -->
+
+### TSIndexSignature
+
+<!-- TODO -->
+
+### TSMethodSignature
+
+<!-- TODO -->
+
+### TSPropertySignature
+
+<!-- TODO -->
