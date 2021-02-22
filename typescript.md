@@ -77,6 +77,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSUnionType
 - [x] TSUnknownKeyword
 - [x] TSVoidKeyword
+- [x] TSIntrinsicKeyword
 
 ## Expressions
 
@@ -346,6 +347,24 @@ interface TSVoidKeyword :< TypeExpression {
 
 ```ts
 var foo: void;
+```
+
+</div>
+</details>
+
+### TSIntrinsicKeyword
+
+```ts
+interface TSIntrinsicKeyword :< TypeExpression {
+  type: "TSIntrinsicKeyword";
+}
+```
+
+<details>
+<div>
+
+```ts
+type Uppercase<S extends string> = intrinsic;
 ```
 
 </div>
