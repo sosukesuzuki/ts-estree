@@ -59,7 +59,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSStaticKeyword
 - [x] TSStringKeyword
 - [x] TSSymbolKeyword
-- [ ] TSTemplateLiteralType
+- [x] TSTemplateLiteralType
 - [x] TSThisType
 - [x] TSTupleType
 - [ ] TSTypeAliasDeclaration
@@ -699,6 +699,34 @@ var foo: import("foo").Foo;
 
 ```ts
 var foo: import("foo").Foo<T>;
+```
+
+</div>
+</details>
+
+### TSTemplateLiteralType
+
+```ts
+interface TSTemplateLiteralType :< TSTemplateLiteralType {
+  type: "TSTemplateLiteralType";
+  quasis: [ TemplateElement ];
+  types: [ TypeExpression ];
+}
+```
+
+A element of `types` must be assignable to `string` or `number` or `bigint` or `boolean` or `null` or `undefined`.
+
+`TSTemplateLiteralType` is used by only typescript-eslint. Babel uses `TSLiteralType` and `TemplateLiteral`.
+
+<details>
+<div>
+
+```ts
+var foo: `${Foo}`;
+```
+
+```ts
+var foo: `foo${Foo}foo${Foo}`;
 ```
 
 </div>
