@@ -26,7 +26,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSExternalModuleReference
 - [ ] TSFunctionType
 - [ ] TSImportEqualsDeclaration
-- [ ] TSImportType
+- [x] TSImportType
 - [ ] TSIndexedAccessType
 - [ ] TSIndexSignature
 - [x] TSInferType
@@ -668,6 +668,37 @@ var map: { -readonly [P in string]-?: number };
 
 ```ts
 var map: { [P in string as T]: number };
+```
+
+</div>
+</details>
+
+### TSImportType
+
+```ts
+interface TSImportType :< TypeExpression {
+  type: "TSImportType";
+  argument: TypeExpression;
+  qualifier: Identifier | TSQualifiedName | null;
+  typeParameters: TSTypeParameterInstantiation | null;
+}
+```
+
+In typescript-eslint, TSImportType has `isTypeOf` property. Also there is `parameter` property instead of `argument`. But they will be removed at next majour. See https://github.com/typescript-eslint/typescript-eslint/pull/3076.
+
+<details>
+<div>
+
+```ts
+var foo: import("foo");
+```
+
+```ts
+var foo: import("foo").Foo;
+```
+
+```ts
+var foo: import("foo").Foo<T>;
 ```
 
 </div>
