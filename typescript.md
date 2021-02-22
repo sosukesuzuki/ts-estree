@@ -35,7 +35,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSInterfaceHeritage
 - [x] TSIntersectionType
 - [x] TSLiteralType
-- [ ] TSMappedType
+- [x] TSMappedType
 - [ ] TSMethodSignature
 - [ ] TSModuleBlock
 - [ ] TSModuleDeclaration
@@ -625,6 +625,49 @@ interface TSTypeQuery :< TypeExpression {
 
 ```ts
 var foo: typeof bar;
+```
+
+</div>
+</details>
+
+### TSMappedType
+
+```ts
+interface TSMappedType :< TypeExpression {
+  type: "TSMappedType";
+  typeParameter: TSTypeParameter;
+  readonly?: boolean | '-' | '+';
+  optional?: boolean | '-' | '+';
+  typeAnnotation?: TypeExpression;
+  nameType: TypeExpression | null;
+}
+```
+
+<details>
+<div>
+
+```ts
+var map: { [P in string] };
+```
+
+```ts
+var map: { [P in string]: number };
+```
+
+```ts
+var map: { readonly [P in string]?: number };
+```
+
+```ts
+var map: { +readonly [P in string]+?: number };
+```
+
+```ts
+var map: { -readonly [P in string]-?: number };
+```
+
+```ts
+var map: { [P in string as T]: number };
 ```
 
 </div>
