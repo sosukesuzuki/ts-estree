@@ -64,7 +64,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSAsyncKeyword
 - [x] TSBigIntKeyword
 - [x] TSBooleanKeyword
-- [ ] TSCallSignatureDeclaration
+- [x] TSCallSignatureDeclaration
 - [x] TSClassImplements
 - [x] TSConditionalType
 - [ ] TSConstructorType,
@@ -911,6 +911,18 @@ var foo: [bar?: string];
 </div>
 </details>
 
+### TSFunctionSignature
+
+```ts
+interface FunctionSignature :< Node {
+  params: Parameter[];
+  returnType?: TSTypeAnnotation;
+  typeParameters?: TSTypeParameterDeclaration;
+}
+```
+
+A base node of function signature types.
+
 ## Declarations
 
 ```ts
@@ -1119,7 +1131,23 @@ A element of [TSTypeLiteral](#TSTypeLiteral) and [TSInterfaceBody](#TSInterfaceB
 
 ### TSCallSignatureDeclaration
 
-<!-- TODO -->
+```ts
+interface TSCallSignatureDeclaration :< FunctionSignature, TypeElement {
+  type: "TSCallSignatureDeclaration";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: {
+  (): void;
+};
+```
+
+</div>
+</details>
 
 ### TSConstructSignatureDeclaration
 
