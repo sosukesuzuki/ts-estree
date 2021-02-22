@@ -92,7 +92,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSMethodSignature
 - [ ] TSModuleBlock
 - [ ] TSModuleDeclaration
-- [ ] TSNamedTupleMember
+- [x] TSNamedTupleMember
 - [ ] TSNamespaceExportDeclaration
 - [x] TSNeverKeyword
 - [x] TSNonNullExpression
@@ -879,6 +879,31 @@ An optional type is only allowed in `elementTypes` of [TSTupleType](#TSTupleType
 
 ```ts
 var foo: [string?, number?];
+```
+
+</div>
+</details>
+
+### TSNamedTupleMember
+
+```ts
+interface TSNamedTupleMember :< TypeExpression {
+  type: "TSNamedTupleMember";
+  label: Identifier;
+  elementType: TypeExpression;
+  optional: boolean;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: [bar: string];
+```
+
+```ts
+var foo: [bar?: string];
 ```
 
 </div>
