@@ -895,6 +895,8 @@ interface TSNamedTupleMember :< TypeExpression {
 }
 ```
 
+A named tuple member is only allowed in `elementTypes` of [TSTupleType](#TSTupleType). See https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#labeled-tuple-elements.
+
 <details>
 <div>
 
