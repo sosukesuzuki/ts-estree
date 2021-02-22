@@ -46,12 +46,30 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
   - [TSTypePredicate](#TSTypePredicate)
   - [TSRestType](#TSRestType)
   - [TSOptionalType](#TSOptionalType)
+  - [TSNamedTupleMember](#TSNamedTupleMember)
+  - [TSFunctionSignature](#TSFunctionSignature)
+
+- [Declarations](#Declarations)
+
+  - [TSInterfaceDeclaration](#TSInterfaceDeclaration)
+  - [TSInterfaceBody](#TSInterfaceBody)
+  - [TSHeritage](#TSHeritage)
+  - [TSInterfaceHeritage](#TSInterfaceHeritage)
+  - [TSClassImplements](#TSClassImplements)
 
 - [Type Parameters](<#Type Parameters>)
 
   - [TSTypeParameterInstantiation](#TSTypeParameterInstantiation)
   - [TSTypeParameterDeclaration](#TSTypeParameterDeclaration)
   - [TSTypeParameter](#TSTypeParameter)
+
+- [Type Elements](<#Type Elements>)
+
+  - [TSCallSignatureDeclaration](#TSCallSignatureDeclaration)
+  - [TSConstructSignatureDeclaration](#TSConstructSignatureDeclaration)
+  - [TSIndexSignature](#TSIndexSignature)
+  - [TSMethodSignature](#TSMethodSignature)
+  - [TSPropertySignature](#TSPropertySignature)
 
 ## TODO
 
@@ -895,7 +913,7 @@ interface TSNamedTupleMember :< TypeExpression {
 }
 ```
 
-A named tuple member is only allowed in `elementTypes` of [TSTupleType](#TSTupleType). See https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#labeled-tuple-elements.
+A named tuple member is only allowed in `elementTypes` of [TSTupleType](#TSTupleType). See <https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#labeled-tuple-elements>.
 
 <details>
 <div>
