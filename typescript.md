@@ -7,6 +7,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 
   - [TSAsExpression](#TSAsExpression)
   - [TSNonNullExpression](#TSNonNullExpression)
+  - [TSTypeAssertion](#TSTypeAssertion)
 
 - [Type Annotations](<#Type Annotations>)
 
@@ -116,7 +117,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSTupleType
 - [ ] TSTypeAliasDeclaration
 - [x] TSTypeAnnotation
-- [ ] TSTypeAssertion
+- [x] TSTypeAssertion
 - [ ] TSTypeLiteral
 - [x] TSTypeOperator
 - [x] TSTypeParameter
@@ -167,6 +168,26 @@ interface TSNonNullExpression :< Expression {
 
 ```ts
 foo!;
+```
+
+</div>
+</details>
+
+### TSTypeAssertion
+
+```ts
+interface TSTypeAssertion :< TypeExpression {
+  type: "TSTypeAssertion";
+  typeAnnotation: TypeExpression;
+  expression: Expression;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo = <number>bar;
 ```
 
 </div>
