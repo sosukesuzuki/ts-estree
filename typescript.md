@@ -44,6 +44,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
   - [TSTemplateLiteralType](#TSTemplateLiteralType)
   - [TSTypePredicate](#TSTypePredicate)
   - [TSRestType](#TSRestType)
+  - [TSOptionalType](#TSOptionalType)
 
 - [Type Parameters](<#Type Parameters>)
 
@@ -97,7 +98,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSNullKeyword
 - [x] TSNumberKeyword
 - [x] TSObjectKeyword
-- [ ] TSOptionalType
+- [x] TSOptionalType
 - [ ] TSParameterProperty
 - [ ] TSParenthesizedType
 - [ ] TSPrivateKeyword
@@ -836,6 +837,27 @@ A rest type is only allowed in elementTypes of [TSTupleType](#TSTupleType).
 
 ```ts
 var foo: [...Bar];
+```
+
+</div>
+</details>
+
+### TSOptionalType
+
+```ts
+interface TSOptionalType :< TypeExpression {
+  type: "TSOptionalType";
+  typeAnnotation: TypeExpression;
+}
+```
+
+An optional type is only allowed in `elementTypes` of [TSTupleType](#TSTupleType). See <https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#optional-elements-in-tuple-types>.
+
+<details>
+<div>
+
+```ts
+var foo: [string?, number?];
 ```
 
 </div>
