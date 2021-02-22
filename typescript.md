@@ -1,5 +1,56 @@
 This documentat specifies the extensions to the core ESTree AST types to the TypeScript grammer.
 
+<!-- Table of Contents -->
+
+- [TODO](#TODO)
+- [Expressions](#Expressions)
+
+  - [TSAsExpression](#TSAsExpression)
+  - [TSNonNullExpression](#TSNonNullExpression)
+
+- [Type Annotations](<#Type Annotations>)
+
+  - [TSTypeAnnotation](#TSTypeAnnotation)
+
+- [Type Expressions](<#Type Expressions>)
+
+  - [TSUndefinedKeyword](#TSUndefinedKeyword)
+  - [TSBooleanKeyword](#TSBooleanKeyword)
+  - [TSNumberKeyword](#TSNumberKeyword)
+  - [TSStringKeyword](#TSStringKeyword)
+  - [TSBigIntKeyword](#TSBigIntKeyword)
+  - [TSSymbolKeyword](#TSSymbolKeyword)
+  - [TSAnyKeyword](#TSAnyKeyword)
+  - [TSNeverKeyword](#TSNeverKeyword)
+  - [TSNullKeyword](#TSNullKeyword)
+  - [TSObjectKeyword](#TSObjectKeyword)
+  - [TSVoidKeyword](#TSVoidKeyword)
+  - [TSIntrinsicKeyword](#TSIntrinsicKeyword)
+  - [TSUnknownKeyword](#TSUnknownKeyword)
+  - [TSThisType](#TSThisType)
+  - [TSLiteralType](#TSLiteralType)
+  - [TSArrayType](#TSArrayType)
+  - [TSTupleType](#TSTupleType)
+  - [TSConditionalType](#TSConditionalType)
+  - [TSTypeReference](#TSTypeReference)
+  - [TSQualifiedName](#TSQualifiedName)
+  - [TSUnionType](#TSUnionType)
+  - [TSIntersectionType](#TSIntersectionType)
+  - [TSInferType](#TSInferType)
+  - [TSTypeOperator](#TSTypeOperator)
+  - [TSTypeQuery](#TSTypeQuery)
+  - [TSMappedType](#TSMappedType)
+  - [TSImportType](#TSImportType)
+  - [TSTemplateLiteralType](#TSTemplateLiteralType)
+  - [TSTypePredicate](#TSTypePredicate)
+  - [TSRestType](#TSRestType)
+
+- [Type Parameters](<#Type Parameters>)
+
+  - [TSTypeParameterInstantiation](#TSTypeParameterInstantiation)
+  - [TSTypeParameterDeclaration](#TSTypeParameterDeclaration)
+  - [TSTypeParameter](#TSTypeParameter)
+
 ## TODO
 
 - [ ] TSAbstractClassProperty
@@ -647,7 +698,7 @@ interface TSMappedType :< TypeExpression {
 <div>
 
 ```ts
-var map: { [P in string] };
+var map: { [P in string]:  };
 ```
 
 ```ts
@@ -684,7 +735,7 @@ interface TSImportType :< TypeExpression {
 }
 ```
 
-In typescript-eslint, TSImportType has `isTypeOf` property. Also there is `parameter` property instead of `argument`. But they will be removed at next majour. See https://github.com/typescript-eslint/typescript-eslint/pull/3076.
+In typescript-eslint, TSImportType has `isTypeOf` property. Also there is `parameter` property instead of `argument`. But they will be removed at next majour. See <https://github.com/typescript-eslint/typescript-eslint/pull/3076>.
 
 <details>
 <div>
@@ -841,7 +892,7 @@ interface TSTypeParameter :< Node {
 }
 ```
 
-`name` is `string` in Babel. See https://github.com/babel/babel/issues/12825.
+`name` is `string` in Babel. See <https://github.com/babel/babel/issues/12825>.
 
 <details>
 <div>
