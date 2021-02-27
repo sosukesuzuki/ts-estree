@@ -1169,7 +1169,23 @@ var foo: {
 
 ### TSConstructSignatureDeclaration
 
-<!-- TODO -->
+```ts
+interface TSConstructSignatureDeclaration :< FunctionSignature, TypeElement {
+  type: "TSConstructSignatureDeclaration";
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: {
+  new (): void;
+};
+```
+
+</div>
+</details>
 
 ### TSIndexSignature
 

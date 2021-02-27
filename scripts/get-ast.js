@@ -4,7 +4,7 @@ const { execSync } = require("child_process");
 
 const isBabel = process.argv.splice(2)[0] !== "--ts-eslint";
 
-const code = fs.readFileSync(path.resolve("./code.ts"), "utf-8");
+const code = fs.readFileSync(path.resolve(__dirname, "./code.ts"), "utf-8");
 
 if (isBabel) {
   const { parse } = require("@babel/parser");
