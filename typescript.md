@@ -949,6 +949,14 @@ interface TSDeclaration :< Statement {}
 
 Any declarations in type context.
 
+### Accessibility
+
+```ts
+enum Accessibility {
+  "private" | "protected" | "public"
+}
+```
+
 ### TSInterfaceDeclaration
 
 ```ts
@@ -1189,7 +1197,29 @@ var foo: {
 
 ### TSIndexSignature
 
-<!-- TODO -->
+```ts
+interface TSIndexSignature :< TypeElement {
+  type: "TSIndexSignature";
+  parameters: Parameter[];
+  typeAnnotation?: TSTypeAnnotation;
+  readonly?: boolean;
+  accessibility?: Accessibility;
+  export?: boolean;
+  static?: boolean;
+}
+```
+
+<details>
+<div>
+
+```ts
+var foo: {
+  [key: string]: string;
+};
+```
+
+</div>
+</details>
 
 ### TSMethodSignature
 
