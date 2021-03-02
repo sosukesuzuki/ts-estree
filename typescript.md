@@ -86,7 +86,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [x] TSClassImplements
 - [x] TSConditionalType
 - [ ] TSConstructorType,
-- [ ] TSConstructSignatureDeclaration,
+- [x] TSConstructSignatureDeclaration,
 - [ ] TSDeclareFunction,
 - [ ] TSDeclareKeyword,
 - [ ] TSEmptyBodyFunctionExpression
@@ -99,7 +99,7 @@ This documentat specifies the extensions to the core ESTree AST types to the Typ
 - [ ] TSImportEqualsDeclaration
 - [x] TSImportType
 - [ ] TSIndexedAccessType
-- [ ] TSIndexSignature
+- [x] TSIndexSignature
 - [x] TSInferType
 - [x] TSInterfaceBody
 - [x] TSInterfaceDeclaration
